@@ -2,7 +2,20 @@
 
 
 <div class="container mt-5">
-  <%= gravatar_for @user %>
-  <p class="h2"><%= @user.name %></p>
-  <p class="h3"> <%= @user.email %></p>
+ <div class="d-flex flex-row">
+   <div class="ml-3">
+     <%= gravatar_for @user %>
+   </div>
+   <div class="">
+     <p class="h2"><%= @user.name %></p>
+     <p class="h3"> <%= @user.email %></p>
+   </div>
+ </div>
+
+  <div class="container">
+    <a href="/users/new" class="float">
+      <i class="fa fa-plus my-float"></i>
+    </a>
+  </div>
+
 </div>
