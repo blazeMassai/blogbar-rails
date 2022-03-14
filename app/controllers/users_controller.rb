@@ -15,11 +15,16 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     # render plain: @user.inspect
     if @user.save
-      flash[:notice] = "User was created successfully!"
+      flash[:success] = "User was created successfully!"
       redirect_to user_path(@user)
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @users.destroy
+    redirect_to index
   end
 
   private

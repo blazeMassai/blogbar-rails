@@ -1,3 +1,5 @@
+<% provide(:title, "SignUp") %>
+
 <div class="container align-center pt-4">
 
   <div class="row">
@@ -14,6 +16,7 @@
         <div class="alert alert-danger alert-dismissible mb-3 mt-3 fade-show">
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
           </button>
+          <p>The form contains <%= pluralize(@user.errors.count, "error") %></p>
           <strong> <%= msg %> </strong>
         </div>
       <% end %>

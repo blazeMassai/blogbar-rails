@@ -16,6 +16,15 @@
        <%= render "layouts/navbar" %>
 
        <div class="container-fluid">
+
+         <% flash.each do |message_type, message| %>
+           <div class="alert alert-<%= message_type %> alert-dismissible mb-3 mt-3 fade-show">
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+             </button>
+             <strong> <%= message %> </strong>
+           </div>
+         <% end %>
+
          <%= yield %>
        </div>
 

@@ -1,3 +1,5 @@
+<% provide(:title, "Users") %>
+
 <div class="container-fluid mt-4">
 
   <div class="container">
@@ -19,6 +21,7 @@
         <th>S/N</th>
         <th>Name</th>
         <th>Email</th>
+        <th>Action</th>
 
       </tr>
       </thead>
@@ -29,7 +32,20 @@
           <td><%= user.name %></td>
           <td><%= user.email %></td>
 
+          <td class="text-center">
+            <span class="badge rounded-pill bg-success" title="View User">
+                    <%= link_to 'Show', user_path(user) %>
+            </span>
+
+            <span class="badge rounded-pill bg-danger" title="Delete User">
+                    <%= link_to 'Delete', user_path(user), method: :delete,
+                        data: { confirm: 'Are you sure you want to delete This User?' }
+                    %>
+            </span>
+
           </td>
+
+
         </tr>
         <% count += 1 %>
       <% end %>

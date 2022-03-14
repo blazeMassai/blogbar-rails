@@ -15,6 +15,7 @@
  */
 @import 'bootstrap';
 
+
 .float{
   position:fixed;
   width:60px;
@@ -38,4 +39,9 @@
 }
 .dataTables_wrapper .dataTables_filter input{
   margin-bottom: 5px;
+  margin-top: 5px;
+}
+.nav-item:hover{
+  background-color: #31b131;
+  border-radius: 2px;
 }
