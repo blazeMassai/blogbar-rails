@@ -1,3 +1,5 @@
+<% if logged_in? %>
+
 <% provide(:title, "Home") %>
 
 <div class="p-3 mb-4 mt-2  rounded-3">
@@ -14,3 +16,10 @@
 
 
 </div>
+  <% else %>
+
+  <div class="container-fluid p-3 mb-4 mt-2  rounded-3 text-center">
+    <h2 class="text-danger">Please log in</h2>
+  </div>
+
+<% end %>

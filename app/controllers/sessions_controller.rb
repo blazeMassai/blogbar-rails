@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def new
   end
 
@@ -6,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      flash[:danger]='You are logged in!'
+      flash[:success]='You are logged in!'
       redirect_to user
       #log the user in and redirect to the user's show page
     else
@@ -18,6 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+    reset_session
     flash[:warning] = 'You have not been logged out'
     redirect_to root_path
 

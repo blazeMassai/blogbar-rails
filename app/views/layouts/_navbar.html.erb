@@ -11,7 +11,9 @@
       <div class="mr-auto"></div>
 
       <ul class="navbar-nav my-2 my-lg-0">
+
         <% if logged_in? %>
+
         <li class="nav-item active">
           <a href="/" class="nav-link">Home
             <span class="sr-only"></span>
@@ -44,7 +46,6 @@
 
 
 
-
       </ul>
 
     </div>
@@ -55,22 +56,24 @@
       </a>
     </button>
 
-        <% else %>
+
+          <% else %>
 
     <button class="btn btn-sm btn-primary d-flex m-1">
-      <a href="/sessions/new" class="nav-link text-light">Log in
+      <a href="/login" class="nav-link text-light">Log in
         <span class="sr-only"></span>
       </a>
     </button>
 
     <button class="btn btn-sm btn-info m-1">
-      <a href="/users/new" class="nav-link text-dark">Sign Up
+      <a href="/signup" class="nav-link text-dark">Sign Up
         <span class="sr-only"></span>
       </a>
     </button>
 
-    <% end %>
+
 
   </div>
+          <% end %>
 
 </nav>
